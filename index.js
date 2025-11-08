@@ -26,7 +26,9 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  swaggerDocs(app,PORT);
+
+app.listen(PORT, '0.0.0.0', () => {  // ← '0.0.0.0' qo'shing
+  swaggerDocs(app, PORT);
   console.log(`Server ${PORT} portda ishlayapti`);
+  console.log(`Railway PORT: ${process.env.PORT}`);
 });
